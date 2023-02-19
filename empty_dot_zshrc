@@ -1,0 +1,9 @@
+export CLICOLOR=1
+export LSCOLOR=gxBxhxDxfxhxhxhxhxcxcx
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats '%F{yellow}[%b]%f'
+setopt PROMPT_SUBST
+export PROMPT='%F{green}%1d%f:${vcs_info_msg_0_}$ '
